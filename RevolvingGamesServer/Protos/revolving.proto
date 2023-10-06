@@ -5,7 +5,7 @@ option csharp_namespace = "RevolvingGamesServer";
 package Revolving;
 
 service RevolvingService {
-    rpc CheckPrimeNmber (PrimeNumber) returns (PrimeNumberResp);
+    rpc CheckPrimeNmber (stream PrimeNumber) returns (stream PrimeNumberResp);
 }
 
 message PrimeNumber {
@@ -17,4 +17,5 @@ message PrimeNumber {
 message PrimeNumberResp {
     int64 id = 1;
     bool isPrime = 2;
+    int64 number = 3;
 }
